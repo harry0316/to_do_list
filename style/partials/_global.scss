@@ -1,0 +1,23 @@
+@use "./_variable.scss" as *;
+@use "./mixins" as *;
+
+
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-family: "NunitoSans",sans-serif;
+}
+
+a{
+text-decoration: none;    
+}
+
+
+li{
+    list-style-type: none;
+}

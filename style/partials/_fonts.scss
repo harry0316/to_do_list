@@ -1,0 +1,26 @@
+
+
+
+@font-face {
+    font-family: "NunitoSans";
+    font-style: bold;
+    font-weight: 700;
+    src: url("../../assets/font/NunitoSans-Bold.woff") format('woff'),
+    url("../../assets/font/Alternative_files/NunitoSans-Bold.woff2") format('woff2');
+  }
+
+@font-face {
+    font-family: "NunitoSans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../assets/font/NunitoSans-Medium.woff") format('woff'),
+    url("../../assets/font/Alternative_files/NunitoSans-Regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: "NunitoSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../../assets/font/NunitoSans-Regular.woff") format('woff'),
+    url("../../assets/font/Alternative_files/NunitoSans-Regular.woff2") format('woff2');
+  }

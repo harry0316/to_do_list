@@ -1,0 +1,90 @@
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variable" as *;
+@use "./partials/_global.scss" as *;
+
+
+
+.body{
+    min-width: 27.5rem;
+    background-image: linear-gradient(to bottom right, #5761B2, #1FC5A8);
+    //background-color: $navy;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+
+.main{
+    margin: $px-16;
+    border-radius: .25rem;
+    @include table{
+        margin: $px-24;
+    }
+
+    &__contain{
+        border: solid 3px $Mercury;
+        color: $Mercury;
+        display: flex;
+        justify-content: center; 
+       }
+    
+}
+
+
+
+.task{
+    margin: $px-16 0;
+
+    &__item{
+        background-color: $white;
+        height: 15vh;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__check{
+        margin-left: $px-16;
+        width: 1.875rem;
+        height: 1.875rem;
+        border-radius: 50%;
+        background-color: $green;
+        color: $white;
+        font-size: $px-22;
+        font-weight: 700;
+        position: relative;
+
+        &::after{
+            position: absolute;
+            content: "✔";
+            left: .375rem;
+            top: 0;
+
+        }
+       }
+
+    &__iconList{
+        display: flex;
+    }
+
+    &__content{
+        font-size: $px-18;
+        padding: 0 $px-8;
+        color:$blue;
+    }
+
+
+    &__iconItem{
+    margin: 0 $px-4;
+    }
+
+    &__iconItem > img{
+        width: 1.5625rem;
+        cursor: pointer;
+
+    }
+}
