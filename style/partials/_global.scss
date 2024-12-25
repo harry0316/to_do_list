@@ -21,3 +21,15 @@ text-decoration: none;
 li{
     list-style-type: none;
 }
+
+
+.button{
+    background-color: $green;
+    border-radius: 4px;
+    color: $white;
+    width: 6.25rem;
+    height: 1.875rem;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}

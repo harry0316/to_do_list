@@ -27,22 +27,23 @@
             </li>
           </ul>
         </div>
-        <div></div>
       </section>
-      <section>
-        <form action="">
-          <label for=""
-            >TASK
-            <input type="text" />
+      <section class="input">
+        <form class="input__form">
+          <label for="task" class="input__label"
+            >Task
+            <input type="text" class="input__task" nama="task" id="task" placeholder="add new task" required/>
           </label>
-          <label for="">
-            deadline
-            <input type="date" />
-          </label>
+          <div class="input__wrapper">
+            <label for="dete" class="input__label input__label--data">
+              <input type="date" class="input__date" name="date" id="date" required/>
+            </label>
+            <button class="input__submit button">Submit</button>
+          </div>
         </form>
       </section>
-      <section>
-        <button class="add button">+</button>
+      <section class="addTask">
+        <button class="addTask__button">+</button>
       </section>
     </main>
   </body>
