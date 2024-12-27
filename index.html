@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <script type="module" src="./scripts/index.js" defer></script>
   </head>
-  <body class="body">
+  <body class="body overlay">
     <main class="main">
       <div class="main__contain">
         <h1 class="main__title">To do list</h1>
@@ -17,26 +18,39 @@
           <p class="task__content">understand JS completelsssy</p>
           <ul class="task__iconList">
             <li class="task__iconItem">
-              <img src="./assets/icon/icons8-edit.svg" alt="" />
+              <img src="./assets/icon/icons8-edit.svg" alt="edit" />
             </li>
             <li class="task__iconItem">
-              <img src="./assets/icon/icons8-garbage.svg" alt="" />
+              <img src="./assets/icon/icons8-garbage.svg" alt="delete" />
             </li>
             <li class="task__iconItem">
-              <img src="./assets/icon/question.svg" alt="" />
+              <img src="./assets/icon/question.svg" alt="confirm_deadline" />
             </li>
           </ul>
         </div>
       </section>
       <section class="input">
-        <form class="input__form">
+        <form id="form" class="input__form">
           <label for="task" class="input__label"
             >Task
-            <input type="text" class="input__task" nama="task" id="task" placeholder="add new task" required/>
+            <input
+              type="text"
+              class="input__task"
+              nama="task"
+              id="task"
+              placeholder="add new task"
+              required
+            />
           </label>
           <div class="input__wrapper">
-            <label for="dete" class="input__label input__label--data">
-              <input type="date" class="input__date" name="date" id="date" required/>
+            <label for="deadline" class="input__label input__label--data">
+              <input
+                type="date"
+                id="deadline"
+                class="input__date"
+                name="date"
+                required
+              />
             </label>
             <button class="input__submit button">Submit</button>
           </div>
@@ -44,6 +58,15 @@
       </section>
       <section class="addTask">
         <button class="addTask__button">+</button>
+      </section>
+      <section class="date popout">
+        <div class="date__wrapper">
+          <img class="date__img" src="./assets/img/Phase_1.png" alt="Phase_1" />
+        </div>
+        <p class="date__due">Due Date: 2024-12-1</p>
+        <h2 class="date__title">
+          You have <span class="date__left"></span> days left.
+        </h2>
       </section>
     </main>
   </body>
