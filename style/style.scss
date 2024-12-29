@@ -11,7 +11,7 @@
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
     position: relative;
 
     @include table{
@@ -45,9 +45,10 @@
     margin: $px-16 0;
 
     &__item{
+        margin: $px-8 0; 
         padding: $px-16;
         background-color: $white;
-        height: 15vh;
+        height: 20%;
         border-radius: 4px;
         display: flex;
         justify-content: space-between;
@@ -79,9 +80,11 @@
     }
 
     &__content{
+        width: 70%;
         font-size: $px-18;
         padding: 0 $px-8;
         color:$blue;
+        word-wrap: break-word;
     }
 
 
@@ -117,6 +120,7 @@
         padding: .3125rem 0 3.125rem 5px;
         margin: 0 auto;
         margin-bottom:$px-16;
+        resize: none;
 
         &:focus{
             outline: solid .0625rem $blue;

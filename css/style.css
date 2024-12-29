@@ -57,7 +57,7 @@ li {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -88,9 +88,10 @@ li {
   margin: 1rem 0;
 }
 .task__item {
+  margin: 0.5rem 0;
   padding: 1rem;
   background-color: white;
-  height: 15vh;
+  height: 20%;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
@@ -117,9 +118,11 @@ li {
   display: flex;
 }
 .task__content {
+  width: 70%;
   font-size: 1.125rem;
   padding: 0 0.5rem;
   color: #5761B2;
+  word-wrap: break-word;
 }
 .task__iconItem {
   margin: 0 0.25rem;
@@ -148,6 +151,7 @@ li {
   padding: 0.3125rem 0 3.125rem 5px;
   margin: 0 auto;
   margin-bottom: 1rem;
+  resize: none;
 }
 .input__task:focus {
   outline: solid 0.0625rem #5761B2;
