@@ -176,9 +176,10 @@ const saveLocalStorage = (newTask) =>{
 // -------------------- set task Id for local storage------------------------------------//
 
 const  setTaskId = () =>{
-    //confirm current task first 
+    //confirm current task first
     const tasks = JSON.parse(localStorage.getItem("tasks"));
-    if(tasks !== null){
+    console.log(tasks);
+    if(tasks && tasks.length > 0){
         //find maxId
         const maxId = Math.max(...tasks.map(task => task.id));
         return maxId + 1;
