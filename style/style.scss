@@ -6,10 +6,9 @@
 
 
 .body{
-    min-width: 27.5rem;
     position: relative;
-
     @include tablet{
+        width: 100%;
         display: flex;
         justify-content: center;
     }
@@ -76,6 +75,11 @@
 
     &__iconList{
         display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+        }
     }
 
     &__content{

@@ -35,6 +35,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
+  width: 100%;
 }
 
 a {
@@ -57,11 +58,11 @@ li {
 }
 
 .body {
-  min-width: 27.5rem;
   position: relative;
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
   .body {
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -121,6 +122,12 @@ li {
 }
 .task__iconList {
   display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .task__iconList {
+    flex-direction: row;
+  }
 }
 .task__content {
   width: 70%;
