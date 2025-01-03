@@ -300,16 +300,16 @@ const iconOption =()=>{
         let diffInDays = Math.round(diffInMs / (24 * 60 * 60 * 1000));
         // Check if the difference is greater than 7 days
         if (diffInDays >= 5) {
-            deadlineImg.src = "../assets/img/Phase_1.png";
+            deadlineImg.src = "assets/img/Phase_1.png";
 
         }else if(diffInDays >=  2){
-            deadlineImg.src = "../assets/img/Phase_2.png";
+            deadlineImg.src = "assets/img/Phase_2.png";
         
         }else if(diffInDays >= 1){
-            deadlineImg.src = "../assets/img/Phase_3.png";
+            deadlineImg.src = "assets/img/Phase_3.png";
         
         }else if(diffInDays <= 0 ){
-            deadlineImg.src = "../assets/img//Phase_6.png";
+            deadlineImg.src = "assets/img//Phase_6.png";
             diffInDays= Math.abs(diffInDays)
             daysLeft.innerText = diffInDays + " days over";
             return;
