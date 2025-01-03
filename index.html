@@ -1,35 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="html">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List</title>
     <link rel="stylesheet" href="./style/style.css" />
     <script type="module" src="./scripts/index.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"
+      defer
+    ></script>
   </head>
   <body class="body overlay">
     <main class="main">
       <div class="main__contain">
         <h1 class="main__title">To do list</h1>
       </div>
-      <section class="task">
-        <!-- <div class="task__item">
-          <div type="checkbox" class="task__check"></div>
-          <p class="task__content">understand JS completelsssy</p>
-          <ul class="task__iconList">
-            <li class="task__iconItem task__edit">
-              <img src="./assets/icon/icons8-edit.svg" alt="edit" />
-            </li>
-            <li class="task__iconItem task__delete">
-              <img src="./assets/icon/icons8-garbage.svg" alt="delete" />
-            </li>
-            <li class="task__iconItem task__deadline">
-              <img class="" src="./assets/icon/question.svg" alt="confirm_deadline" />
-            </li>
-          </ul>
-        </div> -->
-      </section>
-      <section class="input">
+      <section class="task"></section>
+      <section class="input hidden_input">
         <form id="form" class="input__form">
           <label for="task" class="input__label"
             >Task
@@ -61,12 +49,11 @@
       </section>
       <section class="date popout">
         <div class="date__wrapper">
+          <div class="date__delete">×</div>
           <img class="date__img" src="./assets/img/Phase_1.png" alt="Phase_1" />
         </div>
         <p class="date__due">Due Date: 2024-12-1</p>
-        <h2 class="date__title">
-          You have <span class="date__left"></span> days left.
-        </h2>
+        <h2 class="date__title">You have <span class="date__left"></span>.</h2>
       </section>
     </main>
   </body>

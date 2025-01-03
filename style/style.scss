@@ -7,14 +7,9 @@
 
 .body{
     min-width: 27.5rem;
-    background-image: linear-gradient(to bottom right, #5761B2, #1FC5A8);
-    background-position: center;
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 100%;
     position: relative;
 
-    @include table{
+    @include tablet{
         display: flex;
         justify-content: center;
     }
@@ -25,9 +20,13 @@
 .main{
     margin: $px-16;
     border-radius: .25rem;
-    @include table{
+    @include tablet{
         margin: $px-24;
         width: 60vw;
+    }
+
+    @include desktop{
+        width: 40vw;
     }
 
     &__contain{
@@ -104,8 +103,21 @@
     background-color: $white;
     height: 35vh;
     border-radius: 4px;
-    position: relative;
+    width: 95%;
+    position: fixed;
     z-index: 2;
+    top: 35%;
+
+    @include tablet{
+        width: 70vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include desktop{
+        width: 50vw;
+    }
  
     &__form{
         padding: 0 $px-16;
@@ -122,12 +134,17 @@
         margin-bottom:$px-16;
         resize: none;
 
+
         &:focus{
             outline: solid .0625rem $blue;
         }
 
-        @include table{
+        @include tablet{
             width: 52vw;
+        }
+
+        @include desktop {
+            width: 43vw;
         }
 
         }
@@ -194,6 +211,7 @@
 
 
 .date{
+    position: fixed;
     margin: 0 auto;
     width: 80%;
     margin-top: $px-16;
@@ -203,28 +221,60 @@
     color: $blue;
     border-radius: .25rem;
     border: solid .0125rem $Mercury;
-    
+    top:30%;
+    left:10%;
+    z-index: 2;
+
+    @include tablet{
+        width: 50vw;
+        left: 25%;
+    }
+
+    @include desktop{
+        width:30vw;
+        left:35%;
+    }
+
     &__img{
         width: 40%;
     }
+
+    &__delete{
+        font-weight: 700;
+        font-size: 1.25rem;
+        border-radius: 100%;
+        padding: 0 $px-8;
+        border: solid .0625rem $blue;
+        right:30px;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $blue;
+            color: $white;
+        }
+    }
 }
 
-// .popout{
-//     position: fixed;
-//     top:30%;
-//     left:10%;
-//     z-index: 2;
-// }
 
 
-// .body::after{
-//     content: "";
-//     background-color: $Black-regular;
-//     position: absolute;
-//     width: 100%;
-//     height: 108vh;
-//     z-index: 1;
-//     bottom: 0;
-//     opacity: 50%;
+.popout{
+   display: none;
+}
 
-// }
+.hidden_input{
+    display: none;
+}
+
+
+.html::after{
+    content: "";
+    background-color: $Black-regular;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    bottom: 0;
+    opacity: 50%;
+
+}
