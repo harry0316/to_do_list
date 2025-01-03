@@ -13,6 +13,11 @@ const html = document.querySelector(".html");
 
 let currentEditId = null;
 
+//detect device
+const clickEventType = (( window.ontouchstart!== null ) ? 'click':'touchend');
+
+
+
 //create icon (edit, delete, deadline)
 const icons = [
     { src: './assets/icon/icons8-edit.svg', alt: 'edit', class:'task__edit'},
@@ -212,7 +217,7 @@ const iconOption =()=>{
 
     //completion
     completeELs.forEach(completeEL=>{
-        completeEL.addEventListener('click',(e)=>{
+        completeEL.addEventListener(clickEventType,(e)=>{
         const completeTarget = e.target.closest(".task__item");
         const taskList = JSON.parse(localStorage.getItem("tasks")) || [];
         const completeId = completeTarget.id;
@@ -240,7 +245,7 @@ const iconOption =()=>{
 
     //edit
     editELs.forEach(editEl =>{
-        editEl.addEventListener('click', (e)=>{
+        editEl.addEventListener(clickEventType, (e)=>{
         //show input
         inputSection.classList.remove("hidden_input");
         addBackground();
@@ -257,7 +262,7 @@ const iconOption =()=>{
 
     //delete
     deleteEls.forEach(deleteEL=>{
-        deleteEL.addEventListener('click',(e)=>{
+        deleteEL.addEventListener(clickEventType,(e)=>{
         const deleteTarget = e.target.closest(".task__item");
         const taskList = JSON.parse(localStorage.getItem("tasks")) || [];
         const deleteId = deleteTarget.id;
@@ -274,7 +279,7 @@ const iconOption =()=>{
     });
     //deadline
     deadlineEls.forEach(deadlineEL => {
-        deadlineEL.addEventListener("click",(e)=>{
+        deadlineEL.addEventListener(clickEventType,(e)=>{
         dateEl.classList.remove("popout");
         const deadlineTarget = e.target.closest(".task__item");
         const taskList = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -312,14 +317,14 @@ const iconOption =()=>{
 })
     //close tab
     const closeEl = document.querySelector(".date__delete");
-    closeEl.addEventListener("click", e =>{
+    closeEl.addEventListener(clickEventType, e =>{
         const tab = closeEl.closest(".date");
         tab.classList.add("popout");
     })
 
     //add task
     const openEl = document.querySelector(".addTask__button");
-    openEl.addEventListener("click",e=>{
+    openEl.addEventListener(clickEventType,e=>{
         inputSection.classList.remove("hidden_input");
         addBackground();
 
