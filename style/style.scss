@@ -57,12 +57,18 @@
         width: 1.875rem;
         height: 1.875rem;
         border-radius: 50%;
-        background-color: $green;
-        color: $white;
+        background-color: $white;
+        color: $green;
+        border: solid 1px $green;
         font-size: $px-22;
         font-weight: 700;
         position: relative;
         cursor: pointer;
+        
+        &:hover{
+            background-color: $green;
+            color: $white;
+        }
 
         &::after{
             position: absolute;
