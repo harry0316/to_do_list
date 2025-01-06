@@ -34,7 +34,7 @@ html {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  height: var(--overlay-height, 100vh);
 }
 
 a {
@@ -54,6 +54,9 @@ li {
   border: none;
   cursor: pointer;
   display: inline-block;
+}
+.button:hover {
+  background-color: #169a84;
 }
 
 .body {
@@ -236,7 +239,7 @@ li {
   cursor: pointer;
 }
 .addTask__button:hover {
-  background-color: rgb(237, 177, 170);
+  background-color: rgb(216, 106, 93);
 }
 
 .date {
@@ -292,13 +295,14 @@ li {
   display: none;
 }
 
-.html::after {
+html.html::after {
   content: "";
   background-color: #323232;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: var(--overlay-height, 100vh);
   z-index: 0;
   bottom: 0;
+  top: 0;
   opacity: 50%;
 }/*# sourceMappingURL=style.css.map */

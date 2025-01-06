@@ -29,6 +29,7 @@ const icons = [
 window.addEventListener("load",()=>{
     renderTasks();
     iconOption();
+    //addBackground();
     
 
 
@@ -54,9 +55,10 @@ formEl.addEventListener("submit",(event)=>{
                 date:event.target.date.value
             };
             
-            //test
+            //add
             const result = createHTML(newTask);
             tasksEL.prepend(result);
+            addBackground();
 
             //set newTask into list
             saveLocalStorage(newTask);
@@ -102,6 +104,8 @@ function editSubmit(event){
         iconOption();
         inputSection.classList.add("hidden_input");
         
+        currentEditId = null;
+
         //clear form
         event.target.task.value = "";
         event.target.date.value = "";
@@ -154,7 +158,8 @@ function createHTML(list){
          taskEl.appendChild(checkEl);
          taskEl.appendChild(contentEl);
          taskEl.appendChild(iconListEl);
-     }
+
+        }
      return taskEl;
 
      }catch(e){
@@ -284,6 +289,7 @@ const iconOption =()=>{
     deadlineEls.forEach(deadlineEL => {
         deadlineEL.addEventListener(clickEventType,(e)=>{
         e.preventDefault();
+        addBackground();
         dateEl.classList.remove("popout");
         const deadlineTarget = e.target.closest(".task__item");
         const taskList = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -325,6 +331,8 @@ const iconOption =()=>{
         e.preventDefault();
         const tab = closeEl.closest(".date");
         tab.classList.add("popout");
+        removeBackground();
+
     })
 
     //add task
@@ -338,9 +346,21 @@ const iconOption =()=>{
 
 }
 
+
+
 const  addBackground = ()=>{
+    const htmlEl = document.documentElement;
     html.classList.add("html");
-}
+    const totalHeight = html.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    console.log("total",totalHeight);
+    console.log("view",viewportHeight);
+    let overlayHeight = totalHeight > viewportHeight ? totalHeight : viewportHeight;
+    overlayHeight = (overlayHeight) + 5;
+    html.style.setProperty('--overlay-height', `${overlayHeight}px`); 
+    htmlEl.style.setProperty('--overlay-height', `${overlayHeight}px`);
+};
+
 
 
 const removeBackground = ()=>{

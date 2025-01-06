@@ -15,7 +15,7 @@ html{
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
-    height: 100%;
+    height: var(--overlay-height, 100vh);
 }
 
 a{
@@ -37,4 +37,8 @@ li{
     border: none;
     cursor: pointer;
     display: inline-block;
+
+    &:hover{
+        background-color: #169a84;
+    }
 }
